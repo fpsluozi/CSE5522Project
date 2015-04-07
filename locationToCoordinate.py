@@ -13,7 +13,7 @@ with open('DOF__Condominium_Comparable_Rental_Income___Manhattan___FY_2009_2010.
 
 for ad in address:
     location = geolocator.geocode(ad)
-    coordinate.append(str(location.latitude) + ' ' + str(location.longitude))
+    coordinate.append(str(location.latitude) + '，' + str(location.longitude))
 with open('DOF__Condominium_Comparable_Rental_Income___Manhattan___FY_2009_2010.csv', 'r') as f2:
     reader = csv.reader(f2)
     for row2 in reader:
