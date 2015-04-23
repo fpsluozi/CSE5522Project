@@ -1,0 +1,10 @@
+0 Chelsea
+1 East Village
+2 Greenwich Village
+3 Harlem
+4 Midtown East
+5 Midtown West
+6 Suho
+7 Tribeca
+8 Upper East side
+9 Upper West side
