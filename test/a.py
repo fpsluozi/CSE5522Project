@@ -1,29 +1,32 @@
-from geopy.geocoders import Nominatim
+from geopy.geocoders import *
 from geopy.exc import GeocoderTimedOut
 import csv
 # creat a list to hold address
 address = []
 coordinate = []
 listOfRow = []
-geolocator = Nominatim()
-with open('DOF__Condominium_comparable_rental_income___Manhattan_-_FY_2010_2011.csv', 'r') as f:
+geolocator = GoogleV3(api_key="AIzaSyAcMoANDvLbymUGwhhtOhjW9BxcFghawd4")
+with open('DOF__Condominium_comparable_rental_income___Manhattan_-_FY_2010_2011.csv', 'rU') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        address.append(row['MANHATTAN CONDOMINIUM PROPERTY Address'] + ', New York City, NY')
+        address.append(row['MANHATTAN CONDOMINIUM PROPERTY Address'] + ', New York, NY')
 i = 0
 for ad in address:
-    print(i)
+    # print(i)
     try:
-        location = geolocator.geocode(ad,timeout=None)
+        location = geolocator.geocode(ad, timeout=None)
         if location is None:
             coordinate.append("Can not find")
+            print "Cannnot find coord"
         else:
             coordinate.append(str(location.latitude) + ' ' + str(location.longitude))
+            print str(location.latitude) + ' ' + str(location.longitude)
     except GeocoderTimedOut as e:
         coordinate.append("Can not find")
+        print "Cannnot find coord"
 
     i += 1
-with open('2011_With_Coordinate.csv', 'r') as f2:
+with open('2011_With_Coordinate_2.csv', 'r') as f2:
     reader = csv.reader(f2)
     for row2 in reader:
         listOfRow.append(row2)
