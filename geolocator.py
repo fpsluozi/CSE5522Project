@@ -1,6 +1,6 @@
 # Final project CSE5522 Yiran Luo, Jun Wang, Peixuan Jiang, Suhas Gudhe 
 # Date: April 20, 2015
-# Geographic coordination generator
+# Geographic coordinate generator
 # Used to acquired coordinates for the 2011 predictions. 
 # Module used: geopy w/ Google V3
 
